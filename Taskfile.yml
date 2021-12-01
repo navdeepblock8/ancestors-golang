@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  static-check:
+      cmds: 
+        - gofmt -l .
+        - go vet ./...
+        - staticcheck ./... 

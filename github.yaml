@@ -1,0 +1,37 @@
+name: ancestors-golang
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  static-check:
+    runs-on: ubuntu-20.04      
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+     # Setup Go
+    - name: Setup Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.14.0'
+
+    - name: Install dependencies
+      run: |
+        go version
+        go get -u golang.org/x/lint/golint
+        go install honnef.co/go/tools/cmd/staticcheck@latest
+
+    - name: Run vet
+      run: |
+        go vet .
+      
+    - name: Run lint
+      run: |
+        golint .
+
+    - name: Static check
+      run: |
+        staticcheck . 
+                     

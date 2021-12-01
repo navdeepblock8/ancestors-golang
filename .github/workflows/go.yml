@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: '1.14.0'
+    - name: Install Task
+      uses: arduino/setup-task@v1
 
     - name: Install dependencies
       run: |
@@ -20,15 +22,5 @@ jobs:
         go get -u golang.org/x/lint/golint
         go get -u honnef.co/go/tools/cmd/staticcheck@latest
 
-    - name: Run vet
-      run: |
-        go vet .
-      
-    - name: Run lint
-      run: |
-        golint .
-
-    - name: Static check
-      run: |
-        staticcheck . 
-                     
+    - name: Run static-checks
+      run: task static-check 

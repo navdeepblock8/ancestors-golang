@@ -2,8 +2,7 @@ name: ancestors-golang
 
 on: 
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   static-check:

@@ -6,6 +6,7 @@ func Hello() string {
 	return "Hello, world"
 }
 
+//added comment for just commit
 func main() {
 	fmt.Println(Hello())
 }

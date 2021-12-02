@@ -7,6 +7,7 @@ func Hello() string {
 }
 
 //added comment for just commit
+// another to test push
 func main() {
 	fmt.Println(Hello())
 }

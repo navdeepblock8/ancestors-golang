@@ -2,11 +2,9 @@ name: ancestors-golang
 
 on: 
    push:
-     - main
-     - dev
+     - master
   pull_request:
-     - main
-     - dev
+     - master
 
 
 jobs:

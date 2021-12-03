@@ -1,6 +1,12 @@
 name: ancestors-golang
 
-on: [push]
+on: 
+  push: 
+    - master
+  pull_request:
+    - master
+    - $GITHUB_HEAD_REF      
+
 
 jobs:
   static-check:

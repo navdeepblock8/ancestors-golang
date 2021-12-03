@@ -3,7 +3,7 @@ name: ancestors-golang
 on: 
    push:
      - master
-  pull_request:
+   pull_request:
      - master
 
 
